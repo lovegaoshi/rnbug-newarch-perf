@@ -34,7 +34,6 @@ export default ({ miniplayerHeight, opacity, onPress, expand }: Props) => {
     return {
       width: artworkWidth.value,
       height: artworkWidth.value,
-      bottom: -artworkBottom.value,
       left: artworkLeft.value,
       opacity: opacity.value,
       zIndex: opacity.value > 0 ? 1 : -1,
@@ -50,14 +49,7 @@ export default ({ miniplayerHeight, opacity, onPress, expand }: Props) => {
     }
   };
   return (
-    <Animated.View
-      style={[
-        {
-          position: "absolute",
-        },
-        animatedStyle,
-      ]}
-    >
+    <Animated.View style={[{}, animatedStyle]}>
       <TouchableWithoutFeedback onPress={onImagePress}>
         <Image
           style={{ flex: 1 }}

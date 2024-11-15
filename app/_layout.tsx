@@ -13,13 +13,18 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import MotionLayout from "./motionlayout/View";
-import { View } from "react-native";
+import { View, FlatList, ScrollView } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-const D = () => <View></View>;
+const D = () => (
+  <View>
+    <View style={{ height: 100, backgroundColor: "red" }}></View>
+    <View style={{ height: 1, backgroundColor: "white" }}></View>
+  </View>
+);
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -40,9 +45,7 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <View style={{ flex: 1, backgroundColor: "white" }}>
-          <FlashList renderItem={D} />
-        </View>
+        <View style={{ flex: 1, backgroundColor: "white" }}></View>
         <MotionLayout />
         <StatusBar style="auto" />
       </ThemeProvider>
