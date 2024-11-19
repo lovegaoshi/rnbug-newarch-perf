@@ -13,7 +13,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import MotionLayout from "./motionlayout/View";
-import { View, FlatList, ScrollView } from "react-native";
+import { View, FlatList, ScrollView, Text } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -45,7 +45,40 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <View style={{ flex: 1, backgroundColor: "white" }}></View>
+        <View style={{ flex: 1, backgroundColor: "white" }}>
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+          <FlatList
+            data={Array.from(Array(100).keys())}
+            renderItem={({ item }) => <Text>{item}</Text>}
+          />
+        </View>
         <MotionLayout />
         <StatusBar style="auto" />
       </ThemeProvider>
