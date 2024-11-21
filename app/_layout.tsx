@@ -13,6 +13,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import MotionLayout from "./motionlayout/View";
+import FpsCounter from "../components/fpsCounter";
 import { View, FlatList, ScrollView, Text } from "react-native";
 import { FlashList } from "@shopify/flash-list";
 
@@ -44,6 +45,7 @@ export default function RootLayout() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+      <FpsCounter visible={true} />
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <View style={{ flex: 1, backgroundColor: "white" }}>
           <FlatList
